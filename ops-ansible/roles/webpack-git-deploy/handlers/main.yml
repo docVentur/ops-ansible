@@ -1,0 +1,8 @@
+---
+# handlers file for webpack-git-deploy
+- name: Stop Apache
+  command: /www/bin/apachectl stop
+  become: yes
+- name: Start Apache
+  command: /www/bin/apachectl start
+  become: yes

@@ -1,0 +1,7 @@
+- name: Update and upgrade apt packages
+  hosts: [ 'allboxes' ]
+  become: True
+  tasks:
+    - name: update all packages
+      apt:
+        upgrade: dist

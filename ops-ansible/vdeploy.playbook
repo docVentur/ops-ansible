@@ -1,0 +1,66 @@
+---
+- name: Deploy gg website
+  hosts: gg.sectorfour
+  roles:
+
+# ai talk for David; ai listen for Gregory; ai code for Anthony
+
+# WORK SPACE :: DUPLICATES :: leave the original below
+    - { role: 'webpack-git-deploy', project_name: 'ai.yellow.b00ks', destination_path: /www/sites/gg/ai.yellow.b00ks, repo: 'git@lab.sectorfour:vongeist/ai.yellow.b00ks.git', branch: 'master'}
+# WORK SPACE :: DUPLICATES :: leave the original below
+
+############ ai 1st things first or the rest doesn't matter
+    - { role: 'git-deploy', project_name: 'gg-css', destination_path: /www/sites/mai.library/gg-css, repo: 'git@lab.sectorfour:vongeist/gg-css.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'gg', destination_path: /www/sites/gg, repo: 'git@lab.sectorfour:vongeist/gg.git', branch: 'master'}
+    - { role: 'git-deploy', project_name: 'gg-css', destination_path: /www/sites/gg/mai.library/gg-css, repo: 'git@lab.sectorfour:vongeist/gg-css.git', branch: 'master'}
+############ !!!
+    - { role: 'webpack-git-deploy', project_name: 'kitemite', destination_path: /www/sites/gg/kitemite, repo: 'git@lab.sectorfour:vongeist/kitemite.git', branch: 'master'}
+# ^
+# ^ ^ Breathe ;
+    - { role: 'webpack-git-deploy', project_name: 'ai.log', destination_path: /www/sites/gg/ai.log, repo: 'git@lab.sectorfour:vongeist/ai.log.git', branch: 'master'}
+# ^ |FeeL| ;
+    - { role: 'webpack-git-deploy', project_name: 'lichenology', destination_path: /www/sites/gg/lichenology, repo: 'git@lab.sectorfour:vongeist/lichenology.git', branch: 'master'}
+# ^ .think.. ;
+    - { role: 'webpack-git-deploy', project_name: 'gdkp', destination_path: /www/sites/gg/gdkp, repo: 'git@lab.sectorfour:vongeist/gdkp.git', branch: 'master'}
+# |Feel| &
+    - { role: 'webpack-git-deploy', project_name: 'ai.yellow.b00ks', destination_path: /www/sites/gg/ai.yellow.b00ks, repo: 'git@lab.sectorfour:vongeist/ai.yellow.b00ks.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'playing.card-tachi', destination_path: /www/sites/gg/playing.card-tachi, repo: 'git@lab.sectorfour:vongeist/playing.card-tachi.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'CATasTrophy', destination_path: /www/sites/gg/CATasTrophy, repo: 'git@lab.sectorfour:vongeist/CATasTrophy.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'poke.rface', destination_path: /www/sites/gg/poke.rface, repo: 'git@lab.sectorfour:vongeist/poke.rface.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'pushi.f00t.map', destination_path: /www/sites/gg/pushi.f00t.map, repo: 'git@lab.sectorfour:vongeist/pushi.f00t.map.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'sudo-ku', destination_path: /www/sites/gg/sudo-ku, repo: 'git@lab.sectorfour:vongeist/sudo-ku.git', branch: 'master'}
+# .think.. ...
+    - { role: 'webpack-git-deploy', project_name: 'ai.log', destination_path: /www/sites/gg/ai.log, repo: 'git@lab.sectorfour:vongeist/ai.log.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'add_mono', destination_path: /www/sites/gg/add_mono, repo: 'git@lab.sectorfour:vongeist/add_mono.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'lichenology', destination_path: /www/sites/gg/lichenology, repo: 'git@lab.sectorfour:vongeist/lichenology.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'poke.db-oard', destination_path: /www/sites/gg/poke.db-oard, repo: 'git@lab.sectorfour:vongeist/poke.db-oard.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'hima-tachi_map', destination_path: /www/sites/gg/hima-tachi_map, repo: 'git@lab.sectorfour:vongeist/hima-tachi_map.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'dot.mai.owo', destination_path: /www/sites/gg/dot.mai.owo, repo: 'git@lab.sectorfour:vongeist/dot.mai.owo.git', branch: 'master'}
+# ^#|PRO/gress.@ ;
+    - { role: 'webpack-git-deploy', project_name: 'ai.log', destination_path: /www/sites/gg/ai.log, repo: 'git@lab.sectorfour:vongeist/ai.log.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'add_mono', destination_path: /www/sites/gg/add_mono, repo: 'git@lab.sectorfour:vongeist/add_mono.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'lichenology', destination_path: /www/sites/gg/lichenology, repo: 'git@lab.sectorfour:vongeist/lichenology.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'poke.db-oard', destination_path: /www/sites/gg/poke.db-oard, repo: 'git@lab.sectorfour:vongeist/poke.db-oard.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'hima-tachi_map', destination_path: /www/sites/gg/hima-tachi_map, repo: 'git@lab.sectorfour:vongeist/hima-tachi_map.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'dot.mai.owo', destination_path: /www/sites/gg/dot.mai.owo, repo: 'git@lab.sectorfour:vongeist/dot.mai.owo.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'tsugu', destination_path: /www/sites/gg/tsugu, repo: 'git@lab.sectorfour:vongeist/tsugu.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'ledger', destination_path: /www/sites/gg/ledger, repo: 'git@lab.sectorfour:meleneth/ledger.git', branch: 'master'}
+#    - { role: 'webpack-git-deploy', project_name: 'axe', destination_path: /www/sites/gg/axe, repo: 'git@lab.sectorfour:meleneth/axe.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'mai.saga', destination_path: /www/sites/gg/mai.saga, repo: 'git@lab.sectorfour:vongeist/mai.saga.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'pract.ice_habit', destination_path: /www/sites/gg/pract.ice_habit, repo: 'git@lab.sectorfour:vongeist/pract.ice_habit.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'dkdg', destination_path: /www/sites/gg/dkdg, repo: 'git@lab.sectorfour:vongeist/dkdg', branch: 'master'}
+# ^#|gg_GDKP/.@ ;
+    - { role: 'webpack-git-deploy', project_name: 'Growing_Genkiness', destination_path: /www/sites/gg/Growing_Genkiness, repo: 'git@lab.sectorfour:vongeist/Growing_Genkiness.git', branch: 'template'}
+#    - { role: 'webpack-git-deploy', project_name: 'Growing_Genkiness-Template', destination_path: /www/sites/gg/Growing_Genkiness-Template, repo: 'git@lab.sectorfour:vongeist/Growing_Genkiness-Template.git', branch: 'template'}
+    - { role: 'webpack-git-deploy', project_name: 'gdkp', destination_path: /www/sites/gg/gdkp, repo: 'git@lab.sectorfour:vongeist/gdkp.git', branch: 'master'}
+#    - { role: 'webpack-git-deploy', project_name: 'Ninja-Pushy-Cats', destination_path: /www/sites/gg/Ninja-Pushy-Cats, repo: 'git@lab.sectorfour:vongeist/Ninja-Pushy-Cats.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'wizard', destination_path: /www/sites/gg/wizard, repo: 'git@lab.sectorfour:meleneth/wizard.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'colorpicker', destination_path: /www/sites/gg/colorpicker, repo: 'git@lab.sectorfour:meleneth/colorpicker.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'myphaser3wolf', destination_path: /www/sites/gg/myphaser3wolf, repo: 'git@lab.sectorfour:meleneth/myphaser3wolf.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'DontKillDaegoryJean', destination_path: /www/sites/gg/DontKillDaegoryJean, repo: 'git@lab.sectorfour:vongeist/DontKillDaegoryJean.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'slasher', destination_path: /www/sites/gg/slasher, repo: 'git@lab.sectorfour:meleneth/slasher.git', branch: 'master'}
+#    - { role: 'webpack-git-deploy', project_name: 'goblin', destination_path: /www/sites/gg/goblin, repo: 'git@lab.sectorfour:meleneth/goblin.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'SuperAmazingWowTaskHelper', destination_path: /www/sites/gg/SuperAmazingWowTaskHelper, repo: 'git@lab.sectorfour:meleneth/SuperAmazingWowTaskHelper.git', branch: 'master'}
+#    - { role: 'webpack-git-deploy', project_name: 'f00dcraft', destination_path: /www/sites/gg/f00dcraft, repo: 'git@lab.sectorfour:meleneth/f00dcraft.git', branch: 'master'}
+    - { role: 'webpack-git-deploy', project_name: 'wzr.d', destination_path: /www/sites/gg/wzr.d, repo: 'git@lab.sectorfour:meleneth/wizard.git', branch: 'mai.branch'}
+    - { role: 'webpack-git-deploy', project_name: 'ggg', destination_path: /www/sites/gg/ggg, repo: 'git@lab.sectorfour:meleneth/slasher.git', branch: 'mai.branch'}

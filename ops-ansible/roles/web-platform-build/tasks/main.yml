@@ -1,0 +1,26 @@
+---
+# tasks file for web-platform-build
+- name: "Create root web directory: {{ destination_path }}"
+  file:
+    path: "{{ destination_path }}"
+    state: directory
+    mode: 0755
+    owner: docVentur
+    group: docVentur
+- include_role:
+    name: breadboard-compile-source
+  vars:
+    name: "Ruby"
+    download_filename: "ruby-2.4.2.tar.gz"
+    download_url: "https://cache.ruby-lang.org/pub/ruby/2.4"
+    checksum: "sha256:93b9e75e00b262bc4def6b26b7ae8717efc252c47154abb7392e54357e6c8c9c"
+    extract_dir: "ruby-2.4.2"
+    extra_configure_args: "--with-openssl-dir=/usr/bin"
+- include_role:
+    name: breadboard-compile-source
+  vars:
+    name: "Node.JS"
+    download_filename: "node-v8.9.1.tar.gz"
+    download_url: "https://nodejs.org/dist/v8.9.1"
+    checksum: "sha256:32491b7fcc4696b2cdead45c47e52ad16bbed8f78885d32e873952fee0f971e1"
+    extract_dir: "node-v8.9.1"

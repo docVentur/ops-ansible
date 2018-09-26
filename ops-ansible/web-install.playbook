@@ -1,0 +1,14 @@
+---
+- name: Install Web Platform
+  hosts: gg.sectorfour
+  pre_tasks:
+    - name: Install Build Dependencies
+      become: true
+      apt:
+        name: build-essential
+    - name: Install Build Dependencies
+      become: true
+      apt:
+        name: libssl-dev
+  roles:
+    - { role: 'web-platform-build', destination_path: /www }

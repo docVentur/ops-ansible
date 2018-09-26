@@ -1,0 +1,13 @@
+---
+# vars file for breadboard-compile-source
+
+download_url: ""
+download_filename: ""
+checksum: ""
+extract_dir: ""
+name: ""
+prefix: /www
+build_dir: /www/server
+owner: meleneth
+group: meleneth
+extra_configure_args: ""

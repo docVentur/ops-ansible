@@ -1,0 +1,7 @@
+---
+- name: Deploy AXE website
+  hosts: clu.sectorfour
+  roles:
+    - { role: 'webpack-git-deploy', project_name: 'AXE', destination_path: /www/sites/axe, repo: 'git@lab.sectorfour:meleneth/axe.git'}
+    - { role: 'webpack-git-deploy', project_name: 'DataWires', destination_path: /www/sites/datawires, repo: 'git@lab.sectorfour:meleneth/datawires.git'}
+    - { role: 'jekyll-git-deploy', project_name: 'devblog', destination_path: /www/sites/devblog, repo: 'git@lab.sectorfour:meleneth/devblog.git'}

@@ -1,0 +1,35 @@
+---
+# tasks file for jekyll-git-deploy
+- name: 'Create {{ project_name }} directory'
+  file:
+    path: '{{ destination_path }}'
+    state: directory
+    mode: 0755
+- name: 'Clone {{ project_name }} repository'
+  git:
+    repo: '{{ repo }}'
+    dest: '{{ destination_path }}'
+    version: HEAD
+    accept_hostkey: yes
+- name: "Install bundler"
+  environment:
+    PATH: '{{ ansible_env.PATH }}:/www/bin'
+  command: gem install bundler
+  args:
+    chdir: '{{ destination_path }}'
+- name: "Install {{ project_name }} dependencies"
+  environment:
+    PATH: '{{ ansible_env.PATH }}:/www/bin'
+  command: bundle install
+  args:
+    chdir: '{{ destination_path }}'
+- name: 'Build {{ project_name }} site'
+  environment:
+    PATH: '{{ ansible_env.PATH }}:/www/bin'
+  command: bundle exec jekyll build
+  args:
+    chdir: '{{ destination_path }}'
+  notify:
+    - Stop Apache
+    - Start Apache
+

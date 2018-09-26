@@ -1,0 +1,30 @@
+---
+# tasks file for webpack-git-deploy
+- name: 'Create {{ project_name }} directory'
+  file:
+    path: '{{ destination_path }}'
+    state: directory
+    mode: 0755
+- name: 'Clone {{ project_name }} repository'
+  git:
+    repo: '{{ repo }}'
+    dest: '{{ destination_path }}'
+    force: yes
+    version: '{{ branch }}'
+    accept_hostkey: yes
+- name: "Install {{ project_name }} dependencies"
+  environment:
+    PATH: '{{ ansible_env.PATH }}:/www/bin'
+  command: npm install
+  args:
+    chdir: '{{ destination_path }}'
+- name: 'Build {{ project_name }} site'
+  environment:
+    PATH: '{{ ansible_env.PATH }}:/www/bin'
+  command: ./node_modules/.bin/webpack
+  args:
+    chdir: '{{ destination_path }}'
+  notify:
+    - Stop Apache
+    - Start Apache
+

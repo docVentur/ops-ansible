@@ -1,0 +1,14 @@
+---
+
+- name: Manage APT proxy configuration
+  hosts: [ 'allboxes' ]
+  become: True
+
+  environment: '{{ inventory__environment | d({})
+                   | combine(inventory__group_environment | d({}))
+                   | combine(inventory__host_environment  | d({})) }}'
+
+  roles:
+
+    - role: debops.apt_proxy
+      tags: [ 'role::apt_proxy' ]
